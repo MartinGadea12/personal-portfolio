@@ -1,4 +1,4 @@
-import { AuroraBackground } from "./AuroraBackGround";
+import { AuroraBackground } from "./aurora-background";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';

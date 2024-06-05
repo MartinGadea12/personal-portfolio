@@ -1,4 +1,5 @@
-import type { MetaFunction } from "@remix-run/node";
+// app/routes/_index.tsx
+import { MetaFunction } from "@remix-run/node";
 import Hero from "~/components/Hero";
 import SkillsGrid from "~/components/SkillsGrid";
 import ProjectPortfolio from "~/components/ProjectPortfolio";
@@ -7,10 +8,10 @@ import Contact from "~/components/Contact";
 import Navbar from "~/components/Navbar";
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+  return {
+    title: "New Remix App",
+    description: "Welcome to Remix!",
+  };
 };
 
 export default function Index() {

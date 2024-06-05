@@ -1,10 +1,11 @@
 // app/root.tsx
+import type { LinksFunction  } from '@remix-run/node'
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
-import styles from "./styles/tailwind.css";
+import stylesheet from '~/tailwind.css?url'
 
-export const links = () => [
-  { rel: "stylesheet", href: styles },
-];
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: stylesheet },
+]
 
 export default function App() {
   return (

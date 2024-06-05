@@ -2,7 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-export default function Navbar() {
+const Navbar =() => {
   return (
     <nav className="bg-black text-white p-4 flex justify-end space-x-4">
      <div className="flex space-x-4">
@@ -26,3 +26,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export default Navbar;

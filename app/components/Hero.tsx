@@ -1,6 +1,6 @@
-import { AuroraBackground } from "~/components/AuroraBackGround";
+import { AuroraBackground } from "~/components/aurora-background";
 
-export default function Hero() {
+const Hero = () => {
   return (
     <AuroraBackground className="text-white">
       <div className="container mx-auto flex flex-col md:flex-row items-center h-full px-6 md:px-12 py-12 md:py-24">
@@ -25,3 +25,6 @@ export default function Hero() {
     </AuroraBackground>
   );
 }
+
+
+export default Hero;
