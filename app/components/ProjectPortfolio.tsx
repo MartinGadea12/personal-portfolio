@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const projects = [
+const projects  = [
   {
     title: 'DESIGN PERSONAL PORTFOLIO',
     description: 'A personal portfolio showcasing my design projects and skills. Built using React, Remix, and Tailwind for a clean and responsive design. Additionally, I used Aceterrnity for more professional background components.',
