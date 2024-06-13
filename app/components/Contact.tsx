@@ -84,14 +84,6 @@ const Contact = () => {
             >
               <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
             </a>
-            <a
-              href="https://twitter.com/MartinGadea12"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform transform hover:scale-110 text-orange-500"
-            >
-              <FontAwesomeIcon icon={faTwitter} className="w-6 h-6" />
-            </a>
           </div>
         </div>
       </div>

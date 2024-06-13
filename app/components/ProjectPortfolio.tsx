@@ -1,32 +1,40 @@
 import { motion } from 'framer-motion';
 
-const projects  = [
+const projects = [
   {
-    title: 'DESIGN PERSONAL PORTFOLIO',
+    title: 'Personal Portfolio',
     description: 'A personal portfolio showcasing my design projects and skills. Built using React, Remix, and Tailwind for a clean and responsive design. Additionally, I used Aceterrnity for more professional background components.',
     technologies: 'TYPESCRIPT, REACT, REMIX, TAILWIND',
-    image: '../../public/portfolioDesing.png',
-    link: '/projects/design-portfolio',
-    deploy: 'https://deploy-link.com/design-portfolio',
-    code: 'https://github.com/username/design-portfolio',
+    image: "public/assets/images/portfolio.png", 
+    deploy: 'https://portfolio-nine-gules-88.vercel.app/',
+    code: 'https://github.com/MartinGadea12/personal-portfolio',
   },
   {
-    title: 'E-COMMERCE "SNEAKERS"',
+    title: 'E-Commerce "Sneakers"',
     description: 'A modern and minimalist application, for an imported sneaker store, with payment for the application with Paypal or Stripe, notifications via email with Nodemailer.',
     technologies: 'TYPESCRIPT, REACT, REDUX, BOOTSTRAP',
-    image: '../../public/sneakersDesing.png',
+    image: "public/assets/images/sneakers.png", 
     link: '/projects/e-learning-landing-page',
-    deploy: 'https://deploy-link.com/sneakers',
-    code: 'https://github.com/username/sneakers',
+    deploy: 'https://snykers.vercel.app/',
+    code: 'https://github.com/snYKersCompany/shoes-eComerce',
   },
   {
-    title: 'IN PROGRESS',
-    description: 'Currently working to fill this place with a good project, sorry for the delay..',
-    technologies: 'WORKING HARD',
-    image: '../../public/inProgress.png',
-    link: '/projects/e-learning-landing-page',
-    deploy: '#',
-    code: '#',
+    title: 'App movil "Packar"',
+    description: 'I worked at Packar, a company in Spain where I was developing a mobile application, which was going to be for sending packages.',
+    technologies: 'TYPESCRIPT, REACT NATIVE, EXPO GO',
+    image: "public/assets/images/packar.png", 
+    link: '',
+    deploy: '',
+    code: '',
+  },
+  {
+    title: 'Crypto Ghost',
+    description: 'Currently working on an application for cryptocurrencies, this was one of the first implementations I did completely from scratch. The bubbles are made with D3.js, they can move, collide, and clicking on them takes them to detail.',
+    technologies: 'TYPESCRIPT, REACT REMIX, D3JS',
+    image: "public/assets/images/cryptoGhost.png", 
+    link: '',
+    deploy: '',
+    code: '',
   },
 ];
 
@@ -53,22 +61,26 @@ const ProjectPortfolio = () => {
               <p className="text-orange-500 font-bold mb-2">{project.technologies}</p>
               <p className="text-gray-300 mb-4 flex-grow">{project.description}</p>
               <div className="mt-auto flex space-x-2">
-                <a
-                  href={project.deploy}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-900 text-white px-3 py-1 rounded-lg hover:bg-blue-600 transition duration-200 flex-grow text-center"
-                >
-                  Deploy
-                </a>
-                <a
-                  href={project.code}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-900 text-white px-3 py-1 rounded-lg hover:bg-blue-600 transition duration-200 flex-grow text-center"
-                >
-                  Code
-                </a>
+                {project.deploy && (
+                  <a
+                    href={project.deploy}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-900 text-white px-3 py-1 rounded-lg hover:bg-blue-600 transition duration-200 flex-grow text-center"
+                  >
+                    Deploy
+                  </a>
+                )}
+                {project.code && (
+                  <a
+                    href={project.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-900 text-white px-3 py-1 rounded-lg hover:bg-blue-600 transition duration-200 flex-grow text-center"
+                  >
+                    Code
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>

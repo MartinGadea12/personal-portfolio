@@ -13,13 +13,13 @@ const experiences: Experience[] = [
     company: 'Packar',
     position: 'Front-End Mobile Developer',
     duration: 'February 2023 - January 2024',
-    description: 'I develop mobile applications using React Native, Expo GO.'
+    description: 'I develop mobile application using Typescript, React Native, Expo GO.'
   },
   {
     company: 'Team Gravitad',
     position: 'Front-End Developer',
     duration: 'April 2024 - Present',
-    description: 'Working as a freelancer developing front-end applications.'
+    description: 'Currently working as a front end developer at Team gravitad, developing a cryptocurrency application.'
   }
 ];
 
