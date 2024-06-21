@@ -5,7 +5,7 @@ const projects = [
     title: 'Personal Portfolio',
     description: 'A personal portfolio showcasing my design projects and skills. Built using React, Remix, and Tailwind for a clean and responsive design. Additionally, I used Aceterrnity for more professional background components.',
     technologies: 'TYPESCRIPT, REACT, REMIX, TAILWIND',
-    image: "../../public/assets/images/portfolio.png", 
+    image: "/assets/images/portfolio.png", 
     deploy: 'https://portfolio-nine-gules-88.vercel.app/',
     code: 'https://github.com/MartinGadea12/personal-portfolio',
   },
@@ -13,7 +13,7 @@ const projects = [
     title: 'E-Commerce "Sneakers"',
     description: 'A modern and minimalist application, for an imported sneaker store, with payment for the application with Paypal or Stripe, notifications via email with Nodemailer.',
     technologies: 'TYPESCRIPT, REACT, REDUX, BOOTSTRAP',
-    image: "../../public/assets/images/sneakers.png", 
+    image: "/assets/images/sneakers.png", 
     link: '/projects/e-learning-landing-page',
     deploy: 'https://snykers.vercel.app/',
     code: 'https://github.com/snYKersCompany/shoes-eComerce',
@@ -22,7 +22,7 @@ const projects = [
     title: 'App movil "Packar"',
     description: 'I worked at Packar, a company in Spain where I was developing a mobile application, which was going to be for sending packages.',
     technologies: 'TYPESCRIPT, REACT NATIVE, EXPO GO',
-    image: "../../public/assets/images/packar.png", 
+    image: "/assets/images/packar.png", 
     link: '',
     deploy: '',
     code: '',
@@ -31,12 +31,13 @@ const projects = [
     title: 'Crypto Ghost',
     description: 'Currently working on an application for cryptocurrencies, this was one of the first implementations I did completely from scratch. The bubbles are made with D3.js, they can move, collide, and clicking on them takes them to detail.',
     technologies: 'TYPESCRIPT, REACT REMIX, D3JS',
-    image: "../../public/assets/images/cryptoGhost.png", 
+    image: "/assets/images/cryptoGhost.png", 
     link: '',
     deploy: '',
     code: '',
   },
 ];
+
 
 const ProjectPortfolio = () => {
   return (
