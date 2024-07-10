@@ -33,7 +33,7 @@ const projects = [
     technologies: 'TYPESCRIPT, REACT REMIX, D3JS',
     image: "/assets/images/cryptoGhost.png", 
     link: '',
-    deploy: '',
+    deploy: 'https://crypto-ghost.fly.dev/',
     code: '',
   },
 ];
