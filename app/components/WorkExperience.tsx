@@ -13,13 +13,13 @@ const experiences: Experience[] = [
     company: 'Packar',
     position: 'Front-End Mobile Developer',
     duration: 'February 2023 - January 2024',
-    description: 'I develop mobile application using Typescript, React Native, Expo GO.'
+    description: 'Developed a cross-platform mobile application, implementing responsive designs and optimizing performance using TypeScript, React Native, and Expo GO. Collaborated with designers and backend developers to create seamless user experiences and integrated new features, resulting in a 20% increase in user engagement.'
   },
   {
     company: 'Team Gravitad',
     position: 'Front-End Developer',
     duration: 'April 2024 - Present',
-    description: 'Currently working as a front end developer at Team gravitad, developing a cryptocurrency application.'
+    description: 'Currently working as a front-end developer on an advanced cryptocurrency platform. Focused on building intuitive user interfaces and ensuring high performance using modern technologies like React and TypeScript. Actively involved in the design and implementation of new features, collaborating closely with cross-functional teams to deliver high-quality products.'
   }
 ];
 
