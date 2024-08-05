@@ -31,7 +31,7 @@ const projects = [
     description: 'Currently working on an application for cryptocurrencies, this was one of the first implementations I did completely from scratch. The bubbles are made with D3.js, they can move, collide, and clicking on them takes them to detail.',
     technologies: 'TYPESCRIPT, REACT REMIX, D3JS',
     images: ['/assets/images/bubbles2.png'], 
-    deploy: '',
+    deploy: 'https://cryptoghost.fly.dev/dashboard/bubbles',
     code: '',
   },
   {
@@ -39,7 +39,7 @@ const projects = [
     description: 'I designed and developed the landing page, an onchain data platform. The page features a sleek dark-themed design with teal accents, emphasizing the platforms reliability and expertise. Key elements include a clear navigation bar, a bold headline, and call-to-action buttons for user engagement.',
     technologies: 'TYPESCRIPT, REMIX, TAILWIND, ACETERNITY',
     images: ['/assets/images/landingPage.png', '/assets/images/langingPage2.png'],
-    deploy: '',
+    deploy: 'https://cryptoghost.fly.dev/',
     code: '',
   },
   {
@@ -47,7 +47,7 @@ const projects = [
     description: 'This section features three key tables: Top Cryptocurrencies by Volume, Trending Tokens, and Earlybird Coins. Each table provides essential data, including name, price, and recent performance metrics. Users can click on any token to view detailed information.',
     technologies: 'TYPESCRIPT, REMIX, TAILWIND',
     images: ['/assets/images/dashboard.jpg'],
-    deploy: '',
+    deploy: 'https://cryptoghost.fly.dev/dashboard/volume-coins',
     code: '',
   },
 ];
