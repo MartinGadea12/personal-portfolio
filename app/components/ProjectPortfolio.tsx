@@ -50,6 +50,14 @@ const projects = [
     deploy: 'https://cryptoghost.fly.dev/dashboard/volume-coins',
     code: '',
   },
+  {
+    "title": "DaiOff",
+    "description": "AI-powered legal labor advisor designed for law firms and labor unions. This platform automates case analysis, generates legal documents, and provides real-time insights using advanced NLP and machine learning. Built with TypeScript, Remix, PostgreSQL, and Tailwind, it ensures efficiency, accuracy, and seamless legal workflow automation.",
+    "technologies": "TYPESCRIPT, REMIX, POSTGRESQL, TAILWIND",
+    "images": ["/assets/images/daioffLanding.png", "/assets/images/daioff.png"],
+    "deploy": "https://app.daioff.com/",
+    "code": ""
+}
 ];
 
 const ProjectPortfolio = () => {

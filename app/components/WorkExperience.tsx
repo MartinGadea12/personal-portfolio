@@ -12,15 +12,21 @@ const experiences: Experience[] = [
   {
     company: 'Packar',
     position: 'Front-End Mobile Developer',
-    duration: 'February 2023 - January 2024',
+    duration: 'February 2021 - June 2022',
     description: 'Developed a cross-platform mobile application, implementing responsive designs and optimizing performance using TypeScript, React Native, and Expo GO. Collaborated with designers and backend developers to create seamless user experiences and integrated new features, resulting in a 20% increase in user engagement.'
   },
   {
     company: 'Team Gravitad',
     position: 'Front-End Developer',
-    duration: 'April 2024 - Present',
+    duration: 'December 2022 - June 2023',
     description: 'Currently working as a front-end developer on an advanced cryptocurrency platform. Focused on building intuitive user interfaces and ensuring high performance using modern technologies like React and TypeScript. Actively involved in the design and implementation of new features, collaborating closely with cross-functional teams to deliver high-quality products.'
-  }
+  },
+  {
+    company: 'DaiOff',
+    position: 'Full Stack Developer',
+    duration: 'June 2023 - Actually',
+    description: 'I developed an AI-powered legal labor advisory platform designed to assist law firms and labor unions in streamlining their legal processes. The system provides automated case analysis, intelligent document drafting, and real-time legal insights, helping professionals save time and improve accuracy in labor-related matters. By leveraging advanced natural language processing (NLP) and machine learning, the platform ensures reliable legal guidance while adapting to evolving labor laws. My focus was on creating an intuitive, efficient, and secure solution that enhances legal decision-making and workflow automation.'
+  },
 ];
 
 const WorkExperience: React.FC = () => {
