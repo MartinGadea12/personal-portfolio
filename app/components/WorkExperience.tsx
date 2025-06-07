@@ -24,7 +24,7 @@ const experiences: Experience[] = [
   {
     company: 'DaiOff',
     position: 'Full Stack Developer',
-    duration: 'June 2023 - Actually',
+    duration: 'June 2023 - 2025',
     description: 'I developed an AI-powered legal labor advisory platform designed to assist law firms and labor unions in streamlining their legal processes. The system provides automated case analysis, intelligent document drafting, and real-time legal insights, helping professionals save time and improve accuracy in labor-related matters. By leveraging advanced natural language processing (NLP) and machine learning, the platform ensures reliable legal guidance while adapting to evolving labor laws. My focus was on creating an intuitive, efficient, and secure solution that enhances legal decision-making and workflow automation.'
   },
 ];
