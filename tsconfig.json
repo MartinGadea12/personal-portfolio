@@ -2,10 +2,10 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "jsx": "react-jsx",
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -16,7 +16,10 @@
       "~/*": ["./app/*"]
     },
     "sourceMap": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "allowJs": true,
+    "noEmit": true
   },
-  "include": ["app", "remix.env.d.ts"]
+  "include": ["app", "remix.env.d.ts", "types/**/*", "app/vite-env.d.ts"],
+  "exclude": ["node_modules", "dist", "build"]
 }

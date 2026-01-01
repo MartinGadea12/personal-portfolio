@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useLanguage } from "~/contexts/LanguageContext";
 
 const skills = [
   {
@@ -62,6 +63,18 @@ const skills = [
     name: "GitHub",
     logo: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
   },
+  {
+    name: "n8n",
+    logo: "https://avatars.githubusercontent.com/u/54484936?s=200&v=4",
+  },
+  {
+    name: "OpenAI",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+  },
+  {
+    name: "Python",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+  },
 ];
 
 const SkillsGrid: React.FC = () => {
@@ -89,35 +102,38 @@ const SkillsGrid: React.FC = () => {
     return () => cancelAnimationFrame(animationFrame);
   }, []);
 
+  const { t } = useLanguage();
+
   return (
-    <div className="max-w-7xl mx-auto p-6 mt-20">
-      <h1 className="text-4xl font-bold text-center mb-6 text-white">
-        <span className="text-orange-500">Tech</span>nologies
+    <div className="max-w-7xl xl:max-w-[90rem] 2xl:max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-16 mt-12 sm:mt-16 lg:mt-20">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 sm:mb-6 text-white">
+        <span className="text-orange-500">{t.skills.title.substring(0, 4)}</span>{t.skills.title.substring(4)}
       </h1>
-      <div className="border-t-2 border-orange-500 mb-12"></div>
+      <div className="border-t-2 border-orange-500 mb-8 sm:mb-10 md:mb-12 max-w-4xl mx-auto"></div>
 
       <div
         ref={scrollRef}
         className="overflow-x-scroll whitespace-nowrap no-scrollbar"
       >
-        <div className="flex space-x-8 px-4 py-2">
+        <div className="flex space-x-4 sm:space-x-6 md:space-x-8 px-2 sm:px-4 py-2">
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="flex-shrink-0 w-56 h-64 flex flex-col items-center justify-center text-center p-6 bg-gradient-to-r from-gray-800 to-gray-900 shadow-lg rounded-xl transform transition duration-500 hover:scale-110 hover:shadow-2xl"
+              className="flex-shrink-0 w-48 sm:w-52 md:w-56 h-56 sm:h-60 md:h-64 flex flex-col items-center justify-center text-center p-4 sm:p-5 md:p-6 bg-gradient-to-r from-gray-800 to-gray-900 shadow-lg rounded-xl transform transition duration-500 hover:scale-110 active:scale-95 hover:shadow-2xl"
             >
               <img
                 src={skill.logo}
                 alt={`${skill.name} logo`}
-                className="w-24 h-24 mb-4 object-contain"
+                className="w-20 h-20 sm:w-22 sm:h-22 md:w-24 md:h-24 mb-3 sm:mb-4 object-contain"
+                loading="lazy"
               />
-              <h2 className="text-2xl font-bold text-white">{skill.name}</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-white break-words">{skill.name}</h2>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="border-t-2 border-orange-500 mt-12"></div>
+      <div className="border-t-2 border-orange-500 mt-8 sm:mt-10 md:mt-12 max-w-4xl mx-auto"></div>
     </div>
   );
 };

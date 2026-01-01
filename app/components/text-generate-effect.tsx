@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "~/utils/cn";
 
@@ -27,7 +27,7 @@ export const TextGenerateEffect = ({
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope}>
+      <motion.div ref={scope} className="">
         {wordsArray.map((word, idx) => {
           return (
             <motion.span
