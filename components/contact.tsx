@@ -1,11 +1,12 @@
 "use client";
 
-import { Download, Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { localize, profile, type Locale } from "@/lib/profile";
 import { emailjsConfig, toTemplateParams } from "@/lib/emailjs";
 import type { Translations } from "@/lib/i18n/translations";
+import { CvDownloadMenu } from "./cv-download-menu";
 import { SectionHeading } from "./section-heading";
 
 type ContactProps = {
@@ -107,10 +108,7 @@ export function Contact({ locale, copy }: ContactProps) {
             <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer" className="icon-link" aria-label={`GitHub (${copy.controls.external})`}>
               <Github className="size-5" aria-hidden="true" />
             </a>
-            <a href={profile.cvPath} download={profile.cvDownloadName} className="button-secondary">
-              <Download className="size-4" aria-hidden="true" />
-              CV
-            </a>
+            <CvDownloadMenu copy={copy} />
           </div>
         </aside>
 
