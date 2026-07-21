@@ -8,28 +8,36 @@ function subscribeNoop() {
   return () => {};
 }
 
-export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+type ThemeToggleProps = {
+  lightLabel: string;
+  darkLabel: string;
+};
+
+export function ThemeToggle({ lightLabel, darkLabel }: ThemeToggleProps) {
+  const { resolvedTheme, setTheme } = useTheme();
   const mounted = useSyncExternalStore(subscribeNoop, () => true, () => false);
 
   if (!mounted) {
     return (
-      <button className="p-2 rounded-full bg-secondary/50" aria-label="Toggle theme">
+      <span className="icon-link" aria-hidden="true">
         <Sun className="size-5 text-muted-foreground" />
-      </button>
+      </span>
     );
   }
 
+  const isDark = resolvedTheme === "dark";
+
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
-      aria-label="Toggle theme"
+      type="button"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="icon-link"
+      aria-label={isDark ? lightLabel : darkLabel}
     >
-      {theme === "dark" ? (
-        <Sun className="size-5 text-foreground" />
+      {isDark ? (
+        <Sun className="size-5" aria-hidden="true" />
       ) : (
-        <Moon className="size-5 text-foreground" />
+        <Moon className="size-5" aria-hidden="true" />
       )}
     </button>
   );

@@ -1,38 +1,54 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Calendar } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Download, Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { profile } from "@/lib/profile";
-import {
-  emailjsConfig,
-  getEmailjsErrorMessage,
-  isGmailAuthError,
-  toTemplateParams,
-} from "@/lib/emailjs";
-import { useLanguage } from "./language-provider";
+import { localize, profile, type Locale } from "@/lib/profile";
+import { emailjsConfig, toTemplateParams } from "@/lib/emailjs";
+import type { Translations } from "@/lib/i18n/translations";
+import { SectionHeading } from "./section-heading";
 
-export function Contact() {
-  const { t } = useLanguage();
+type ContactProps = {
+  locale: Locale;
+  copy: Translations;
+};
+
+type FieldErrors = Partial<Record<"name" | "email" | "message", string>>;
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+export function Contact({ locale, copy }: ContactProps) {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
     message: "",
+    website: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<"success" | "error" | null>(null);
-  const [errorDetail, setErrorDetail] = useState<string | null>(null);
+  const [errors, setErrors] = useState<FieldErrors>({});
+  const feedbackRef = useRef<HTMLParagraphElement>(null);
 
-  useEffect(() => {
-    emailjs.init({ publicKey: emailjsConfig.publicKey });
-  }, []);
+  const validate = () => {
+    const nextErrors: FieldErrors = {};
+    const name = formState.name.trim();
+    const email = formState.email.trim();
+    const message = formState.message.trim();
+
+    if (name.length < 2 || name.length > 100) nextErrors.name = copy.contact.invalidName;
+    if (!emailPattern.test(email) || email.length > 254) nextErrors.email = copy.contact.invalidEmail;
+    if (message.length < 10 || message.length > 2000) nextErrors.message = copy.contact.invalidMessage;
+
+    setErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting || formState.website || !validate()) return;
+
     setIsSubmitting(true);
     setFeedback(null);
-    setErrorDetail(null);
 
     try {
       await emailjs.send(
@@ -43,103 +59,128 @@ export function Contact() {
       );
 
       setFeedback("success");
-      setFormState({ name: "", email: "", message: "" });
-    } catch (err) {
-      const message = getEmailjsErrorMessage(err);
-      console.error("EmailJS send failed:", message, err);
-      setErrorDetail(
-        isGmailAuthError(err) ? t.contact.gmailReconnect : message
-      );
+      setFormState({ name: "", email: "", message: "", website: "" });
+      setErrors({});
+    } catch {
       setFeedback("error");
     } finally {
       setIsSubmitting(false);
+      requestAnimationFrame(() => feedbackRef.current?.focus());
     }
   };
 
   return (
     <section
       id="contact"
-      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-      aria-label={t.sections.contact}
+      className="section-shell"
+      aria-labelledby="contact-title"
     >
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-foreground lg:sr-only">
-          {t.sections.contact}
-        </h2>
+      <div id="contact-title">
+        <SectionHeading eyebrow={copy.sections.contact} title={copy.contact.heading} />
       </div>
+      <p className="mb-8 max-w-3xl text-lg leading-8 text-muted-foreground">{copy.contact.intro}</p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <div className="mb-6 space-y-4">
-          <h3 className="text-lg font-semibold text-foreground">
-            {t.contact.heading}
-          </h3>
-          <p className="text-sm text-muted-foreground">{t.contact.intro}</p>
-        </div>
-
-        <div className="mb-8 flex flex-wrap gap-4">
+      <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+        <aside className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <h3 className="text-lg font-semibold text-foreground">{copy.contact.direct}</h3>
+          <div className="mt-5 grid gap-3">
           <a
             href={`mailto:${profile.email}`}
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="contact-link"
           >
-            <Mail className="size-4 text-primary" />
+              <Mail className="size-5 text-primary" aria-hidden="true" />
             <span>{profile.email}</span>
           </a>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <MapPin className="size-4 text-primary" />
-            <span>{t.profile.location}</span>
+            <div className="flex min-h-11 items-center gap-3 text-sm text-muted-foreground">
+              <MapPin className="size-5 text-primary" aria-hidden="true" />
+              <span>{localize(profile.location, locale)}</span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              <span className="block font-semibold text-foreground">{copy.contact.availability}</span>
+              {localize(profile.availability, locale)}
+            </p>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Calendar className="size-4 text-primary" />
-            <span>{t.profile.availability}</span>
+          <div className="mt-6 flex gap-2">
+            <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer" className="icon-link" aria-label={`LinkedIn (${copy.controls.external})`}>
+              <Linkedin className="size-5" aria-hidden="true" />
+            </a>
+            <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer" className="icon-link" aria-label={`GitHub (${copy.controls.external})`}>
+              <Github className="size-5" aria-hidden="true" />
+            </a>
+            <a href={profile.cvPath} download={profile.cvDownloadName} className="button-secondary">
+              <Download className="size-4" aria-hidden="true" />
+              CV
+            </a>
           </div>
-        </div>
+        </aside>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-6 sm:p-8" noValidate aria-busy={isSubmitting}>
+          <h3 className="mb-6 text-lg font-semibold text-foreground">{copy.contact.formHeading}</h3>
+          <div className="sr-only" aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={formState.website}
+              onChange={(e) => setFormState({ ...formState, website: e.target.value })}
+            />
+          </div>
+          <div className="space-y-5">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label
                 htmlFor="name"
                 className="mb-2 block text-sm font-medium text-foreground"
               >
-                {t.contact.name}
+                  {copy.contact.name}
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
+                  minLength={2}
+                  maxLength={100}
+                  autoComplete="name"
+                  aria-invalid={Boolean(errors.name)}
+                  aria-describedby={errors.name ? "name-error" : undefined}
                 value={formState.name}
                 onChange={(e) =>
                   setFormState({ ...formState, name: e.target.value })
                 }
-                className="w-full rounded-md border border-border bg-secondary/50 px-4 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-                placeholder={t.contact.namePlaceholder}
+                  className="form-control"
+                  placeholder={copy.contact.namePlaceholder}
               />
+                {errors.name && <p id="name-error" className="form-error">{errors.name}</p>}
             </div>
             <div>
               <label
                 htmlFor="email"
                 className="mb-2 block text-sm font-medium text-foreground"
               >
-                {t.contact.email}
+                  {copy.contact.email}
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
+                  maxLength={254}
+                  autoComplete="email"
+                  inputMode="email"
+                  aria-invalid={Boolean(errors.email)}
+                  aria-describedby={errors.email ? "email-error" : undefined}
                 value={formState.email}
                 onChange={(e) =>
                   setFormState({ ...formState, email: e.target.value })
                 }
-                className="w-full rounded-md border border-border bg-secondary/50 px-4 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-                placeholder={t.contact.emailPlaceholder}
+                  className="form-control"
+                  placeholder={copy.contact.emailPlaceholder}
               />
+                {errors.email && <p id="email-error" className="form-error">{errors.email}</p>}
             </div>
           </div>
           <div>
@@ -147,59 +188,60 @@ export function Contact() {
               htmlFor="message"
               className="mb-2 block text-sm font-medium text-foreground"
             >
-              {t.contact.message}
+                {copy.contact.message}
             </label>
             <textarea
               id="message"
               name="message"
               required
-              rows={4}
+              rows={5}
+              minLength={10}
+              maxLength={2000}
+              aria-invalid={Boolean(errors.message)}
+              aria-describedby={errors.message ? "message-error" : undefined}
               value={formState.message}
               onChange={(e) =>
                 setFormState({ ...formState, message: e.target.value })
               }
-              className="w-full resize-none rounded-md border border-border bg-secondary/50 px-4 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-              placeholder={t.contact.messagePlaceholder}
+                className="form-control min-h-32 resize-y"
+                placeholder={copy.contact.messagePlaceholder}
             />
+              {errors.message && <p id="message-error" className="form-error">{errors.message}</p>}
           </div>
 
           {feedback === "success" && (
-            <p role="status" className="text-sm text-primary">
-              {t.contact.success}
+              <p ref={feedbackRef} tabIndex={-1} role="status" className="rounded-lg bg-primary/10 p-3 text-sm text-primary">
+                {copy.contact.success}
             </p>
           )}
           {feedback === "error" && (
-            <p role="alert" className="text-sm text-destructive">
-              {t.contact.error}
-              {errorDetail ? (
-                <span className="mt-1 block text-xs opacity-80">
-                  {errorDetail}
-                </span>
-              ) : null}
+              <p ref={feedbackRef} tabIndex={-1} role="alert" className="rounded-lg bg-destructive/10 p-3 text-sm text-destructive">
+                {copy.contact.error}{" "}
+                <a href={`mailto:${profile.email}`} className="font-semibold underline">{profile.email}</a>
             </p>
           )}
 
-          <motion.button
+          <button
             type="submit"
             disabled={isSubmitting}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="button-primary"
           >
             {isSubmitting ? (
               <>
-                <span className="size-4 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" />
-                {t.contact.sending}
+                  <span className="size-4 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent motion-reduce:animate-none" aria-hidden="true" />
+                  {copy.contact.sending}
               </>
             ) : (
               <>
-                <Send className="size-4" />
-                {t.contact.submit}
+                  <Send className="size-4" aria-hidden="true" />
+                  {copy.contact.submit}
               </>
             )}
-          </motion.button>
+          </button>
+            <p className="text-xs leading-5 text-muted-foreground">{copy.contact.privacy}</p>
+          </div>
         </form>
-      </motion.div>
+      </div>
     </section>
   );
 }

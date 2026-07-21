@@ -1,61 +1,69 @@
-"use client";
+import { education } from "@/lib/profile";
+import type { Translations } from "@/lib/i18n/translations";
+import { SectionHeading } from "./section-heading";
 
-import { motion } from "framer-motion";
-import { useLanguage } from "./language-provider";
+type AboutProps = {
+  copy: Translations;
+};
 
-export function About() {
-  const { t, education } = useLanguage();
+export function About({ copy }: AboutProps) {
 
   return (
     <section
       id="about"
-      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-      aria-label={t.sections.about}
+      className="section-shell"
+      aria-labelledby="about-title"
     >
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-foreground lg:sr-only">
-          {t.sections.about}
-        </h2>
+      <div id="about-title">
+        <SectionHeading
+          eyebrow={copy.sections.about}
+          title={copy.sections.aboutIntro}
+        />
       </div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="space-y-4 text-muted-foreground"
-      >
-        {t.about.paragraphs.map((paragraph) => (
-          <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-        ))}
+      <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr]">
+        <div className="space-y-5 text-base leading-8 text-muted-foreground">
+          {copy.about.paragraphs.map((paragraph) => (
+            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+          ))}
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="pt-4"
-        >
-          <h3 className="mb-3 text-sm font-semibold text-foreground">
-            {t.about.education}
-          </h3>
-          <ul className="space-y-2 text-sm">
-            {education.map((item) => (
-              <li key={`${item.title}-${item.institution}`}>
-                <span className="font-medium text-foreground">{item.title}</span>
-                {" — "}
-                {item.institution}
-                <span className="text-muted-foreground"> ({item.period})</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-4 text-sm">
-            <span className="font-medium text-foreground">
-              {t.about.languagesLabel}
-            </span>{" "}
-            {t.about.languages}
+        <aside className="space-y-8 rounded-2xl border border-border bg-card p-6">
+          <div>
+            <h3 className="mb-3 text-sm font-semibold text-foreground">
+              {copy.sections.about}
+            </h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {copy.about.capabilities.map((capability) => (
+                <li key={capability} className="flex gap-2">
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                  {capability}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-3 text-sm font-semibold text-foreground">
+              {copy.about.education}
+            </h3>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              {education.map((item) => (
+                <li key={item.id}>
+                  <span className="block font-medium text-foreground">{item.program}</span>
+                  <span>
+                    {item.institution} · {item.period}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p className="text-sm text-muted-foreground">
+            <span className="block font-semibold text-foreground">{copy.about.languages}</span>
+            {copy.about.languageValue}
           </p>
-        </motion.div>
-      </motion.div>
+        </aside>
+      </div>
     </section>
   );
 }
