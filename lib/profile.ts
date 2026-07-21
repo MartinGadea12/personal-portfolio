@@ -71,8 +71,16 @@ export const profile = {
   },
   githubUrl: "https://github.com/MartinGadea12",
   linkedinUrl: "https://www.linkedin.com/in/martingadea12",
-  cvPath: "/CV-FULL-STACK-DEV.pdf",
-  cvDownloadName: "Martin-Gadea-Full-Stack-Developer-CV.pdf",
+  cv: {
+    es: {
+      path: "/Martin_Gadea_CV_Espa%C3%B1ol.pdf",
+      downloadName: "Martin_Gadea_CV_Espanol.pdf",
+    },
+    en: {
+      path: "/Martin_Gadea_CV_English.pdf",
+      downloadName: "Martin_Gadea_CV_English.pdf",
+    },
+  },
 } as const;
 
 export const experiences: readonly Experience[] = [

@@ -1,9 +1,10 @@
 "use client";
 
-import { Download, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { profile, type Locale } from "@/lib/profile";
+import type { Locale } from "@/lib/profile";
 import type { Translations } from "@/lib/i18n/translations";
+import { CvDownloadMenu } from "./cv-download-menu";
 import { ThemeToggle } from "./theme-toggle";
 
 type SiteHeaderProps = {
@@ -89,10 +90,12 @@ export function SiteHeader({ locale, copy }: SiteHeaderProps) {
             {otherLocale.toUpperCase()}
           </a>
           <ThemeToggle lightLabel={copy.controls.themeLight} darkLabel={copy.controls.themeDark} />
-          <a href={profile.cvPath} download={profile.cvDownloadName} className="ml-1 hidden button-compact sm:inline-flex">
-            <Download className="size-4" aria-hidden="true" />
-            CV
-          </a>
+          <CvDownloadMenu
+            copy={copy}
+            variant="compact"
+            align="right"
+            className="ml-1 hidden sm:inline-flex"
+          />
           <button
             ref={toggleRef}
             type="button"
@@ -124,10 +127,14 @@ export function SiteHeader({ locale, copy }: SiteHeaderProps) {
               </li>
             ))}
             <li className="pt-2 sm:hidden">
-              <a href={profile.cvPath} download={profile.cvDownloadName} onClick={closeMenu} className="button-primary w-full">
-                <Download className="size-4" aria-hidden="true" />
-                {copy.hero.cvCta}
-              </a>
+              <CvDownloadMenu
+                copy={copy}
+                label={copy.hero.cvCta}
+                variant="primary"
+                align="right"
+                className="w-full"
+                onDownload={closeMenu}
+              />
             </li>
           </ul>
         </nav>

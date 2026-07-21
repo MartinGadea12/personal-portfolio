@@ -102,6 +102,9 @@ const es = {
     themeDark: "Usar tema oscuro",
     language: "Ver portfolio en inglés",
     external: "abre en una pestaña nueva",
+    cvLanguage: "Elegir idioma del CV",
+    cvSpanish: "CV en español",
+    cvEnglish: "CV en inglés",
   },
   footer: "Portfolio desarrollado con Next.js y TypeScript.",
 } as const;
@@ -214,6 +217,9 @@ const en: Widen<typeof es> = {
     themeDark: "Use dark theme",
     language: "View portfolio in Spanish",
     external: "opens in a new tab",
+    cvLanguage: "Choose CV language",
+    cvSpanish: "CV in Spanish",
+    cvEnglish: "CV in English",
   },
   footer: "Portfolio built with Next.js and TypeScript.",
 };

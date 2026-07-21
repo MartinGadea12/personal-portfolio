@@ -15,7 +15,7 @@ Portfolio profesional bilingüe de Martin Gadea, Full Stack Developer especializ
 - Metadata localizada, canonical, `hreflang`, Open Graph, Twitter Card y JSON-LD.
 - Sitemap, robots, manifest e imagen social.
 - Navegación responsive accesible y casos de estudio.
-- Descarga del CV y formulario con validación, honeypot y fallback por email.
+- Descarga del CV en español o inglés y formulario con validación, honeypot y fallback por email.
 
 ## Requisitos
 
@@ -46,7 +46,8 @@ No existe una suite de tests automatizados en este repositorio.
 - `lib/profile.ts`: perfil, experiencia, proyectos, habilidades y educación.
 - `lib/i18n/translations.ts`: contenido de interfaz en español e inglés.
 - `public/projects/`: capturas de proyectos.
-- `public/CV-FULL-STACK-DEV.pdf`: CV publicado sin transformación.
+- `public/Martin_Gadea_CV_Español.pdf`: CV publicado en español.
+- `public/Martin_Gadea_CV_English.pdf`: CV publicado en inglés.
 
 Los proyectos deben incluir únicamente información verificable. Los campos sin evidencia se omiten de la interfaz.
 
@@ -67,5 +68,5 @@ En el panel de EmailJS se deben restringir los orígenes permitidos a localhost 
 El proyecto está preparado para Vercel con instalación reproducible mediante `npm ci`. Después del despliegue:
 
 1. Asociar `martingadea.org` al proyecto correcto.
-2. Validar `/es`, `/en`, `/robots.txt`, `/sitemap.xml` y el CV.
+2. Validar `/es`, `/en`, `/robots.txt`, `/sitemap.xml` y ambos CV.
 3. Registrar el dominio en los orígenes permitidos de EmailJS.

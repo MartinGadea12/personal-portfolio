@@ -1,6 +1,7 @@
-import { Download, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { localize, profile, type Locale } from "@/lib/profile";
 import type { Translations } from "@/lib/i18n/translations";
+import { CvDownloadMenu } from "./cv-download-menu";
 
 type HeroProps = {
   locale: Locale;
@@ -35,10 +36,7 @@ export function Hero({ locale, copy }: HeroProps) {
         <div className="mt-9 flex flex-wrap gap-3">
           <a href="#projects" className="button-primary">{copy.hero.projectsCta}</a>
           <a href="#contact" className="button-secondary">{copy.hero.contactCta}</a>
-          <a href={profile.cvPath} download={profile.cvDownloadName} className="button-secondary">
-            <Download className="size-4" aria-hidden="true" />
-            {copy.hero.cvCta}
-          </a>
+          <CvDownloadMenu copy={copy} label={copy.hero.cvCta} />
         </div>
 
         <div className="mt-9 flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:gap-7">
