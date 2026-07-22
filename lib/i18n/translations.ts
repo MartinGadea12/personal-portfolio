@@ -4,7 +4,7 @@ const es = {
   seo: {
     title: "Martin Gadea | Full Stack Developer especializado en IA aplicada",
     description:
-      "Portfolio de Martin Gadea, desarrollador Full Stack con más de 4 años de experiencia en React, TypeScript, Node.js, aplicaciones mobile, RAG y automatización con n8n.",
+      "Portfolio de Martin Gadea, desarrollador Full Stack con más de 5 años de experiencia en React, TypeScript, Node.js, aplicaciones mobile, RAG y automatización con n8n.",
   },
   nav: {
     label: "Navegación principal",
@@ -23,7 +23,7 @@ const es = {
     title: "Full Stack Developer especializado en IA aplicada",
     description:
       "Desarrollo aplicaciones web y mobile con React, TypeScript y Node.js, integrando IA, RAG y automatizaciones con n8n para resolver necesidades reales de producto.",
-    tags: ["4+ años de experiencia", "Full Stack", "IA aplicada", "Disponible remoto"],
+    tags: ["5+ años de experiencia", "Full Stack", "IA aplicada", "Disponible remoto"],
     projectsCta: "Ver proyectos",
     contactCta: "Contactarme",
     cvCta: "Descargar CV",
@@ -33,7 +33,7 @@ const es = {
     about: "Sobre mí",
     aboutIntro: "Experiencia de producto de punta a punta",
     experience: "Experiencia",
-    experienceIntro: "Más de cuatro años desarrollando productos web y mobile.",
+    experienceIntro: "Más de cinco años desarrollando productos web y mobile.",
     projects: "Proyectos",
     projectsIntro: "Una selección ordenada por relevancia Full Stack e IA aplicada.",
     skills: "Habilidades",
@@ -42,8 +42,8 @@ const es = {
   },
   about: {
     paragraphs: [
-      "Soy desarrollador Full Stack con más de cuatro años de experiencia construyendo aplicaciones web y mobile. Trabajo principalmente con React, TypeScript y Node.js, desarrollando interfaces, APIs, lógica de negocio e integraciones con bases de datos.",
-      "También participé en la construcción de workflows n8n para clasificación, validación documental y agentes RAG financieros, ambientales y de matchmaking. Mi enfoque es integrar IA y automatización dentro de productos funcionales, combinando experiencia de usuario, lógica de negocio y recuperación contextual.",
+      "Soy desarrollador Full Stack con más de cinco años de experiencia construyendo aplicaciones web y mobile. Trabajo principalmente con React, TypeScript y Node.js, desarrollando interfaces, APIs, lógica de negocio e integraciones con bases de datos.",
+      "También lideré el desarrollo técnico de una plataforma PropTech y construí workflows n8n para clasificación, validación documental y agentes RAG financieros, ambientales y de matchmaking. Mi enfoque es integrar IA y automatización dentro de productos funcionales, combinando experiencia de usuario, lógica de negocio y recuperación contextual.",
       "Busco oportunidades Full Stack, Backend, Frontend o de IA aplicada dentro de equipos remotos.",
     ],
     capabilities: ["Web y mobile", "Frontend y backend", "APIs y bases de datos", "RAG y automatización con n8n", "Equipos remotos y ágiles"],
@@ -119,7 +119,7 @@ const en: Widen<typeof es> = {
   seo: {
     title: "Martin Gadea | Full Stack & Applied AI Engineer",
     description:
-      "Portfolio of Martin Gadea, a Full Stack Developer with 4+ years of experience in React, TypeScript, Node.js, mobile applications, RAG and n8n automation.",
+      "Portfolio of Martin Gadea, a Full Stack Developer with 5+ years of experience in React, TypeScript, Node.js, mobile applications, RAG and n8n automation.",
   },
   nav: {
     label: "Main navigation",
@@ -138,7 +138,7 @@ const en: Widen<typeof es> = {
     title: "Full Stack & Applied AI Engineer",
     description:
       "I build web and mobile applications with React, TypeScript and Node.js, integrating AI, RAG and n8n automations to solve real product needs.",
-    tags: ["4+ years of experience", "Full Stack", "Applied AI", "Available remotely"],
+    tags: ["5+ years of experience", "Full Stack", "Applied AI", "Available remotely"],
     projectsCta: "View projects",
     contactCta: "Contact me",
     cvCta: "Download CV",
@@ -148,7 +148,7 @@ const en: Widen<typeof es> = {
     about: "About",
     aboutIntro: "End-to-end product development experience",
     experience: "Experience",
-    experienceIntro: "More than four years building web and mobile products.",
+    experienceIntro: "More than five years building web and mobile products.",
     projects: "Projects",
     projectsIntro: "A selection ordered by Full Stack and applied AI relevance.",
     skills: "Skills",
@@ -157,8 +157,8 @@ const en: Widen<typeof es> = {
   },
   about: {
     paragraphs: [
-      "I am a Full Stack Developer with more than four years of experience building web and mobile applications. I work mainly with React, TypeScript and Node.js, developing interfaces, APIs, business logic and database integrations.",
-      "I also contributed to building n8n workflows for classification, document validation, and financial, environmental and matchmaking RAG agents. My focus is integrating AI and automation into functional products by combining user experience, business logic and contextual retrieval.",
+      "I am a Full Stack Developer with more than five years of experience building web and mobile applications. I work mainly with React, TypeScript and Node.js, developing interfaces, APIs, business logic and database integrations.",
+      "I also led the technical development of a PropTech platform and built n8n workflows for classification, document validation, and financial, environmental and matchmaking RAG agents. My focus is integrating AI and automation into functional products by combining user experience, business logic and contextual retrieval.",
       "I am looking for Full Stack, Backend, Frontend or applied AI opportunities within remote teams.",
     ],
     capabilities: ["Web and mobile", "Frontend and backend", "APIs and databases", "RAG and n8n automation", "Remote, agile teams"],

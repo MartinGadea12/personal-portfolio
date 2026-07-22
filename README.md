@@ -46,8 +46,8 @@ No existe una suite de tests automatizados en este repositorio.
 - `lib/profile.ts`: perfil, experiencia, proyectos, habilidades y educación.
 - `lib/i18n/translations.ts`: contenido de interfaz en español e inglés.
 - `public/projects/`: capturas de proyectos.
-- `public/Martin_Gadea_CV_Español.pdf`: CV publicado en español.
-- `public/Martin_Gadea_CV_English.pdf`: CV publicado en inglés.
+- `public/CV-GADEA-ESPAÑOL.pdf`: CV publicado en español.
+- `public/CV-GADEA-ENGLISH.pdf`: CV publicado en inglés.
 
 Los proyectos deben incluir únicamente información verificable. Los campos sin evidencia se omiten de la interfaz.
 

@@ -73,17 +73,43 @@ export const profile = {
   linkedinUrl: "https://www.linkedin.com/in/martingadea12",
   cv: {
     es: {
-      path: "/Martin_Gadea_CV_Espa%C3%B1ol.pdf",
-      downloadName: "Martin_Gadea_CV_Espanol.pdf",
+      path: "/CV-GADEA-ESPA%C3%91OL.pdf",
+      downloadName: "CV-GADEA-ESPANOL.pdf",
     },
     en: {
-      path: "/Martin_Gadea_CV_English.pdf",
-      downloadName: "Martin_Gadea_CV_English.pdf",
+      path: "/CV-GADEA-ENGLISH.pdf",
+      downloadName: "CV-GADEA-ENGLISH.pdf",
     },
   },
 } as const;
 
 export const experiences: readonly Experience[] = [
+  {
+    id: "arkia",
+    company: "Arkia / Activo Digital",
+    role: "Tech Lead",
+    period: { es: "Ago 2025 — Mar 2026", en: "Aug 2025 — Mar 2026" },
+    workMode: { es: "Remoto", en: "Remote" },
+    productType: {
+      es: "Plataforma PropTech para activos inmobiliarios",
+      en: "PropTech platform for real-estate assets",
+    },
+    contributions: {
+      es: [
+        "Liderazgo técnico del desarrollo de una plataforma PropTech para administrar activos inmobiliarios de gran escala, con foco en regulaciones ambientales europeas.",
+        "Diseño e integración de agentes de IA y flujos RAG para apoyar la estimación del comportamiento del mercado inmobiliario y el análisis de carteras de activos.",
+        "Gestión y procesamiento de documentación, certificados y estándares medioambientales de edificios, incluyendo impacto ambiental y huella de carbono.",
+        "Desarrollo de herramientas de apoyo a la toma de decisiones financieras y automatización de workflows para la administración de activos.",
+      ],
+      en: [
+        "Led the technical development of a PropTech platform for managing large-scale real estate assets, with a focus on European environmental regulations.",
+        "Designed and integrated AI agents and RAG workflows to support real estate market behavior forecasting and asset portfolio analysis.",
+        "Managed and processed building documentation, certificates, and environmental standards, including environmental impact and carbon footprint data.",
+        "Developed decision-support tools for financial analysis and automated workflows for real estate asset management.",
+      ],
+    },
+    technologies: ["n8n", "RAG", "Python", "Node.js", "React", "TypeScript", "Supabase", "OpenAI"],
+  },
   {
     id: "daioff",
     company: "DaiOff",
@@ -91,34 +117,33 @@ export const experiences: readonly Experience[] = [
     period: { es: "Jun 2023 — Feb 2026", en: "Jun 2023 — Feb 2026" },
     workMode: { es: "Remoto", en: "Remote" },
     productType: {
-      es: "Productos LegalTech, PropTech y SportsTech",
-      en: "LegalTech, PropTech and SportsTech products",
+      es: "Productos LegalTech y SportsTech",
+      en: "LegalTech and SportsTech products",
     },
     contributions: {
       es: [
-        "Contribuí al desarrollo de WeMatch: app mobile con reservas, e-commerce, comunidad, chat y matchmaking; gestor de clubes; panel administrativo; backend y pagos con Stripe.",
-        "Trabajé en DAIOFF, desarrollando flujos para casos, auditorías, documentos y asistentes jurídicos con Remix, Prisma y PostgreSQL.",
-        "Implementé y evolucioné RAG Legal con Python, FastAPI, LangGraph, embeddings y Qdrant, y participé en su integración con DAIOFF.",
-        "Contribuí a Activo Digital en frontend, APIs, autenticación, gestión inmobiliaria, procesamiento documental y automatizaciones n8n con agentes RAG financieros y ambientales.",
-        "Participé en Jarvis AI, integrando OpenAI en flujos de marketing, buyer personas, estrategias, contenido, autenticación y persistencia con Remix y Prisma.",
-        "Trabajé en equipo sobre APIs, bases de datos, CI/CD y despliegues con Fly.io, EAS y GitHub Actions.",
+        "Desarrollo mobile de WeMatch con React Native y Expo: reservas, e-commerce, comunidad, chat, torneos, ligas, formación, wallet, pagos y matchmaking.",
+        "Contribución al ecosistema web de WeMatch: gestor de clubes, panel administrativo, backend, autenticación por roles, inventario, catálogo, promociones, analítica de ventas y automatización de entregas.",
+        "Desarrollo de flujos y APIs para una plataforma LegalTech de gestión de casos, auditorías, documentos, tareas y asistentes jurídicos con Remix, Prisma y PostgreSQL.",
+        "Implementación y evolución de un servicio RAG jurídico con Python, FastAPI, LangGraph, embeddings de OpenAI y Qdrant.",
+        "Participación en Jarvis AI e integraciones con OpenAI, Stripe, Expo EAS, Docker, Fly.io y GitHub Actions.",
       ],
       en: [
-        "Contributed to WeMatch across a mobile app with bookings, e-commerce, community, chat and matchmaking; a club manager; an administration panel; backend services and Stripe payments.",
-        "Worked on DAIOFF, developing case, audit, document and legal-assistant flows with Remix, Prisma and PostgreSQL.",
-        "Implemented and evolved RAG Legal with Python, FastAPI, LangGraph, embeddings and Qdrant, and contributed to its integration with DAIOFF.",
-        "Contributed to Activo Digital across frontend, APIs, authentication, real-estate operations, document processing and n8n automation with financial and environmental RAG agents.",
-        "Contributed to Jarvis AI, integrating OpenAI into marketing, buyer-persona, strategy, content, authentication and persistence flows using Remix and Prisma.",
-        "Collaborated on APIs, databases, CI/CD and deployments using Fly.io, EAS and GitHub Actions.",
+        "Developed the WeMatch mobile application with React Native and Expo, covering bookings, e-commerce, community features, chat, tournaments, leagues, training, wallet, payments, and matchmaking.",
+        "Contributed to the WeMatch web ecosystem, including the club management system, admin panel, backend, role-based authentication, inventory, catalog, promotions, sales analytics, and delivery automation.",
+        "Developed workflows and APIs for a LegalTech platform for case, audit, document, task, and legal assistant management using Remix, Prisma, and PostgreSQL.",
+        "Implemented and enhanced a legal RAG service using Python, FastAPI, LangGraph, OpenAI embeddings, and Qdrant.",
+        "Contributed to Jarvis AI and integrations with OpenAI, Stripe, Expo EAS, Docker, Fly.io, and GitHub Actions.",
       ],
     },
-    technologies: ["React", "TypeScript", "Node.js", "Remix", "Express", "React Native", "Prisma", "PostgreSQL", "Supabase", "RAG", "n8n", "OpenAI"],
+    technologies: ["React", "TypeScript", "Node.js", "Remix", "Express", "React Native", "Prisma", "PostgreSQL", "Supabase", "RAG", "n8n", "OpenAI", "Python", "FastAPI", "LangGraph", "Qdrant"],
   },
   {
     id: "gravitad",
     company: "Gravitad",
     role: "Frontend Developer",
     period: { es: "Dic 2022 — Jun 2023", en: "Dec 2022 — Jun 2023" },
+    workMode: { es: "Remoto", en: "Remote" },
     productType: {
       es: "Wallet de criptomonedas",
       en: "Cryptocurrency wallet",
@@ -126,31 +151,30 @@ export const experiences: readonly Experience[] = [
     contributions: {
       es: [
         "Desarrollo frontend de una wallet de criptomonedas con React y TypeScript.",
-        "Integración de APIs para consultar y administrar información de la aplicación.",
-        "Implementación de interfaces responsive para diferentes tamaños de pantalla.",
+        "Implementación de componentes, interfaces responsive e integración de APIs para consultar y administrar información desde la aplicación.",
       ],
       en: [
-        "Developed the frontend of a cryptocurrency wallet with React and TypeScript.",
-        "Integrated APIs to retrieve and manage application data.",
-        "Implemented responsive interfaces for different screen sizes.",
+        "Developed the frontend of a cryptocurrency wallet using React and TypeScript.",
+        "Built components and responsive interfaces and integrated APIs to retrieve and manage application data.",
       ],
     },
-    technologies: ["React", "TypeScript", "REST APIs", "Responsive Design"],
+    technologies: ["React", "TypeScript"],
   },
   {
     id: "packar",
     company: "Packar",
     role: "Frontend Developer",
     period: { es: "Feb 2021 — Jun 2022", en: "Feb 2021 — Jun 2022" },
+    workMode: { es: "Remoto", en: "Remote" },
     productType: { es: "Aplicación mobile", en: "Mobile application" },
     contributions: {
       es: [
-        "Desarrollo de una aplicación mobile con React Native y Expo.",
-        "Implementación y mantenimiento de interfaces adaptadas a dispositivos móviles.",
+        "Desarrollo y mantenimiento de una aplicación mobile con React Native y Expo.",
+        "Construcción y evolución de interfaces adaptadas a distintos dispositivos móviles.",
       ],
       en: [
-        "Developed a mobile application with React Native and Expo.",
-        "Implemented and maintained interfaces adapted to mobile devices.",
+        "Developed and maintained a mobile application using React Native and Expo.",
+        "Built and enhanced interfaces optimized for different mobile devices.",
       ],
     },
     technologies: ["React Native", "Expo"],
@@ -364,18 +388,18 @@ export const projects: readonly Project[] = [
   },
   {
     id: "activo-digital",
-    title: "Activo Digital",
+    title: "Arkia / Activo Digital",
     description: {
-      es: "Plataforma Full Stack para centralizar activos inmobiliarios, documentación, auditorías y finanzas, con validación documental y agentes RAG especializados.",
-      en: "Full-stack platform centralizing real-estate assets, documents, audits and finance, with document validation and specialized RAG agents.",
+      es: "Plataforma PropTech para gestión de activos inmobiliarios, documentación, certificados y análisis financiero y ambiental, con agentes de IA, RAG y automatizaciones n8n.",
+      en: "PropTech platform for real-estate asset management, documentation, certificates, and financial and environmental analysis, with AI agents, RAG and n8n automations.",
     },
-    role: { es: "Contribución Full Stack", en: "Full-stack contribution" },
+    role: { es: "Tech Lead", en: "Tech Lead" },
     category: "Full Stack",
-    technologies: ["React", "TypeScript", "Node.js", "Express", "Supabase", "PostgreSQL", "Redis", "BullMQ", "n8n", "OpenAI"],
+    technologies: ["React", "TypeScript", "Node.js", "Python", "Supabase", "n8n", "RAG", "OpenAI"],
     image: "/projects/Arkia.png",
     imageAlt: {
-      es: "Interfaz de gestión inmobiliaria de Activo Digital",
-      en: "Activo Digital real-estate management interface",
+      es: "Interfaz de gestión inmobiliaria de Arkia / Activo Digital",
+      en: "Arkia / Activo Digital real-estate management interface",
     },
     demoUrl: "https://edificio-digital.fly.dev/",
     repositories: [
@@ -385,20 +409,20 @@ export const projects: readonly Project[] = [
     caseStudy: true,
     demoData: true,
     participation: {
-      es: "Contribuí en frontend, APIs, autenticación, edificios y libros digitales, Supabase y despliegues. También participé en la construcción de workflows n8n para clasificación, validación documental y agentes financieros y ambientales.",
-      en: "Contributed across frontend, APIs, authentication, buildings and digital books, Supabase and deployment. Also helped build n8n workflows for classification, document validation, and financial and environmental agents.",
+      es: "Lideré el desarrollo técnico de la plataforma: frontend, APIs, autenticación, edificios y libros digitales, Supabase y despliegues. También construí workflows n8n para clasificación, validación documental y agentes financieros y ambientales.",
+      en: "Led the technical development of the platform across frontend, APIs, authentication, buildings and digital books, Supabase and deployment. Also built n8n workflows for classification, document validation, and financial and environmental agents.",
     },
     implementation: {
-      es: "Trabajé sobre un frontend React/TypeScript y un backend Node.js/Express con Supabase, PostgreSQL, storage y RLS. También participé en procesos Redis/BullMQ y webhooks n8n para clasificar consultas, validar archivos y coordinar OpenAI con Supabase.",
-      en: "I worked across a React/TypeScript frontend and Node.js/Express backend using Supabase, PostgreSQL, storage and RLS. I also contributed to Redis/BullMQ processes and n8n webhooks for query classification, file validation, and OpenAI/Supabase coordination.",
+      es: "Trabajé sobre un frontend React/TypeScript y un backend Node.js/Express con Supabase, PostgreSQL, storage y RLS. También orquesté procesos Redis/BullMQ y webhooks n8n para clasificar consultas, validar archivos y coordinar OpenAI con Supabase.",
+      en: "I worked across a React/TypeScript frontend and Node.js/Express backend using Supabase, PostgreSQL, storage and RLS. I also orchestrated Redis/BullMQ processes and n8n webhooks for query classification, file validation, and OpenAI/Supabase coordination.",
     },
     ai: {
-      es: "Participé en workflows activos para validar PDFs e imágenes, aplicar checklists, detectar duplicados y almacenar resultados en Supabase. También participé en flujos RAG financieros y ambientales con embeddings de OpenAI, Supabase Vector Store y agentes especializados, además de un clasificador de consultas por webhook.",
-      en: "Contributed to active workflows that validate PDFs and images, apply checklists, detect duplicates and store results in Supabase. I also contributed to financial and environmental RAG flows with OpenAI embeddings, Supabase Vector Store and specialized agents, plus a webhook-based query classifier.",
+      es: "Diseñé e integré workflows para validar PDFs e imágenes, aplicar checklists, detectar duplicados y almacenar resultados en Supabase. También implementé flujos RAG financieros y ambientales con embeddings de OpenAI, Supabase Vector Store y agentes especializados, además de un clasificador de consultas por webhook.",
+      en: "Designed and integrated workflows that validate PDFs and images, apply checklists, detect duplicates and store results in Supabase. I also implemented financial and environmental RAG flows with OpenAI embeddings, Supabase Vector Store and specialized agents, plus a webhook-based query classifier.",
     },
     result: {
-      es: "Contribuí a implementar flujos para edificios, documentación, auditorías y finanzas, además de automatizaciones para ingesta validada y consulta contextual de información financiera y ambiental.",
-      en: "I contributed to implementing flows for buildings, documents, audits and finance, along with automation for validated ingestion and contextual retrieval of financial and environmental information.",
+      es: "La plataforma centraliza edificios, documentación, auditorías y finanzas, con automatizaciones para ingesta validada y consulta contextual de información financiera y ambiental orientada a regulaciones europeas.",
+      en: "The platform centralizes buildings, documents, audits and finance, with automation for validated ingestion and contextual retrieval of financial and environmental information aligned with European regulations.",
     },
   },
   {
@@ -484,32 +508,32 @@ export const skillCategories: readonly SkillCategory[] = [
       es: "Especialización aplicada a productos web.",
       en: "Specialization applied to web products.",
     },
-    skills: ["RAG", "Prompt engineering", "n8n", "OpenAI API", "Qdrant", "Supabase Vector Store", "LangGraph", "Integración de IA", "Automatización de flujos"],
+    skills: ["RAG", "Embeddings", "LLMs", "Prompt engineering", "n8n", "OpenAI API", "LangChain", "LangGraph", "Pinecone", "Qdrant", "Supabase Vector Store", "Integración de IA", "Automatización de flujos"],
     primary: true,
   },
   {
     id: "frontend",
     title: { es: "Frontend", en: "Frontend" },
     description: { es: "Interfaces web accesibles y responsive.", en: "Accessible, responsive web interfaces." },
-    skills: ["JavaScript ES6+", "TypeScript", "React", "Redux", "Next.js", "Remix", "HTML5", "CSS3", "TailwindCSS", "Material UI", "Bootstrap", "Responsive Design"],
+    skills: ["JavaScript ES6+", "TypeScript", "React", "React Router", "Redux", "Next.js", "Remix", "HTML5", "CSS3", "TailwindCSS", "Material UI", "Bootstrap", "Responsive Design"],
   },
   {
     id: "backend",
     title: { es: "Backend", en: "Backend" },
     description: { es: "APIs, lógica de negocio y datos.", en: "APIs, business logic and data." },
-    skills: ["Node.js", "Express", "Python", "FastAPI", "REST APIs", "PostgreSQL", "MongoDB", "Prisma", "Sequelize", "Postman"],
+    skills: ["Node.js", "Express", "Python", "FastAPI", "REST APIs", "PostgreSQL", "Supabase", "MongoDB", "SQLite", "Prisma", "Sequelize", "Postman"],
   },
   {
     id: "mobile",
     title: { es: "Mobile", en: "Mobile" },
     description: { es: "Aplicaciones multiplataforma.", en: "Cross-platform applications." },
-    skills: ["React Native", "Expo"],
+    skills: ["React Native", "Expo", "Expo EAS"],
   },
   {
     id: "workflow",
     title: { es: "Herramientas y metodología", en: "Tools & Workflow" },
     description: { es: "Colaboración remota y ágil.", en: "Remote, agile collaboration." },
-    skills: ["Git", "GitHub Actions", "Docker", "Fly.io", "Scrum", "Agile", "Trabajo remoto"],
+    skills: ["Git", "GitHub Actions", "Docker", "CI/CD", "Fly.io", "AWS EC2", "AWS S3", "AWS Lambda", "Scrum", "Agile", "Trabajo remoto"],
   },
 ];
 
