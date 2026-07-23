@@ -233,9 +233,6 @@ export const projects: readonly Project[] = [
       es: "Inicio de la aplicación mobile WeMatch para jugadores",
       en: "WeMatch player mobile application home screen",
     },
-    repositories: [
-      { label: "Monorepo", url: "https://github.com/Dai-Off/padel_mono_repo" },
-    ],
     highlights: {
       es: [
         "Reservas de pistas y partidos",
@@ -284,9 +281,6 @@ export const projects: readonly Project[] = [
       en: "WeMatch web application for club bookings and operations",
     },
     demoUrl: "https://padel-fe.fly.dev/",
-    repositories: [
-      { label: "Monorepo", url: "https://github.com/Dai-Off/padel_mono_repo" },
-    ],
     highlights: {
       es: [
         "Gestión de clubes, pistas y jugadores",
@@ -321,9 +315,6 @@ export const projects: readonly Project[] = [
       en: "Store and inventory management in the WeMatch administration panel",
     },
     demoUrl: "https://padel-wechat-admin.fly.dev/",
-    repositories: [
-      { label: "Monorepo", url: "https://github.com/Dai-Off/padel_mono_repo" },
-    ],
     highlights: {
       es: [
         "Autenticación administrativa por roles",
@@ -402,10 +393,6 @@ export const projects: readonly Project[] = [
       en: "Arkia / Activo Digital real-estate management interface",
     },
     demoUrl: "https://edificio-digital.fly.dev/",
-    repositories: [
-      { label: "Frontend", url: "https://github.com/Dai-Off/activodigital_fe" },
-      { label: "Backend", url: "https://github.com/Dai-Off/activodigital_be" },
-    ],
     caseStudy: true,
     demoData: true,
     participation: {
