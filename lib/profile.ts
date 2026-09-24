@@ -88,7 +88,7 @@ export const experiences: readonly Experience[] = [
     id: "arkia",
     company: "Arkia / Activo Digital",
     role: "Tech Lead",
-    period: { es: "Ago 2025 — Mar 2026", en: "Aug 2025 — Mar 2026" },
+    period: { es: "Ago 2025 — Jul 2026", en: "Aug 2025 — Mar 2026" },
     workMode: { es: "Remoto", en: "Remote" },
     productType: {
       es: "Plataforma PropTech para activos inmobiliarios",

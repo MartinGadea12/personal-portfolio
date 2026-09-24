@@ -89,13 +89,7 @@ export function SiteHeader({ locale, copy }: SiteHeaderProps) {
           <a href={`/${otherLocale}`} hrefLang={otherLocale} className="control-link" aria-label={copy.controls.language}>
             {otherLocale.toUpperCase()}
           </a>
-          <ThemeToggle lightLabel={copy.controls.themeLight} darkLabel={copy.controls.themeDark} />
-          <CvDownloadMenu
-            copy={copy}
-            variant="compact"
-            align="right"
-            className="ml-1 hidden sm:inline-flex"
-          />
+        
           <button
             ref={toggleRef}
             type="button"
