@@ -141,7 +141,7 @@ export const experiences: readonly Experience[] = [
   {
     id: "gravitad",
     company: "Gravitad",
-    role: "Frontend Developer",
+    role: "Full Stack Developer",
     period: { es: "Dic 2022 — Jun 2023", en: "Dec 2022 — Jun 2023" },
     workMode: { es: "Remoto", en: "Remote" },
     productType: {
@@ -150,11 +150,11 @@ export const experiences: readonly Experience[] = [
     },
     contributions: {
       es: [
-        "Desarrollo frontend de una wallet de criptomonedas con React y TypeScript.",
+        "Desarrollo Full Stack de una wallet de criptomonedas con React y TypeScript.",
         "Implementación de componentes, interfaces responsive e integración de APIs para consultar y administrar información desde la aplicación.",
       ],
       en: [
-        "Developed the frontend of a cryptocurrency wallet using React and TypeScript.",
+        "Developed a Full Stack cryptocurrency wallet using React and TypeScript.",
         "Built components and responsive interfaces and integrated APIs to retrieve and manage application data.",
       ],
     },
@@ -163,7 +163,7 @@ export const experiences: readonly Experience[] = [
   {
     id: "packar",
     company: "Packar",
-    role: "Frontend Developer",
+    role: "Full Stack Developer",
     period: { es: "Feb 2021 — Jun 2022", en: "Feb 2021 — Jun 2022" },
     workMode: { es: "Remoto", en: "Remote" },
     productType: { es: "Aplicación mobile", en: "Mobile application" },
@@ -306,7 +306,7 @@ export const projects: readonly Project[] = [
       es: "Panel administrativo responsive para WeMatch con autenticación por roles, altas de clubes, e-commerce, inventario, promociones y analítica comercial.",
       en: "Responsive WeMatch administration panel with role-based authentication, club onboarding, e-commerce, inventory, promotions and sales analytics.",
     },
-    role: { es: "Desarrollo frontend e integración de APIs", en: "Frontend development and API integration" },
+    role: { es: "Contribución Full Stack", en: "Full-stack contribution" },
     category: "Full Stack",
     technologies: ["React", "TypeScript", "Vite", "React Router", "Tailwind CSS", "Express", "Supabase", "PostgreSQL"],
     image: "/projects/wematch-admin-store.png",
@@ -438,8 +438,8 @@ export const projects: readonly Project[] = [
       es: "Interfaz web de análisis de criptomonedas con dashboard y visualización de datos.",
       en: "Cryptocurrency analysis interface with a dashboard and data visualizations.",
     },
-    role: { es: "Desarrollo frontend", en: "Frontend development" },
-    category: "Frontend",
+    role: { es: "Desarrollo Full Stack", en: "Full Stack development" },
+    category: "Full Stack",
     technologies: ["TypeScript", "Remix", "D3.js", "Responsive Design"],
     image: "/projects/Crypto Ghost.png",
     imageAlt: {
