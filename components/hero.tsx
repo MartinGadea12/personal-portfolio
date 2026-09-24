@@ -36,7 +36,7 @@ export function Hero({ locale, copy }: HeroProps) {
         <div className="mt-9 flex flex-wrap gap-3">
           <a href="#projects" className="button-primary">{copy.hero.projectsCta}</a>
           <a href="#contact" className="button-secondary">{copy.hero.contactCta}</a>
-          <CvDownloadMenu copy={copy} label={copy.hero.cvCta} />
+         
         </div>
 
         <div className="mt-9 flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:gap-7">
